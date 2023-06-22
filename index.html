@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Weather App - Sidiqalfi</title>
+    <!-- app icons -->
+    <script
+      src="https://kit.fontawesome.com/0e9547e38c.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- external css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <!-- main page -->
+        <div class="input">
+          <i class="fa-solid fa-location-dot fa-lg"></i>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="Enter Your Location"
+          />
+          <i class="fa-solid fa-magnifying-glass fa-lg" id="submit"></i>
+        </div>
+
+        <!-- result page -->
+        <div class="result">
+          <div class="weather">
+            <img src="assets/images/cloud.png" alt="" / class="weather-img">
+            <div class="temperature">
+              <h2 class="temperature-number">27</h2>
+              <span>&#8451;</span>
+            </div>
+            <p class="temperature-description">Few Clouds</p>
+          </div>
+          <div class="others">
+            <div class="others-box">
+              <i class="fa-solid fa-water fa-xl"></i>
+              <div class="others-result">
+                <p class="percentage">70%</p>
+                <span>Humidity</span>
+              </div>
+            </div>
+            <div class="others-box">
+              <i class="fa-solid fa-wind fa-xl"></i>
+              <div class="others-result">
+                <p class="speed">5Km/h</p>
+                <span>Wind Speed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- error page -->
+        <div class="error">
+          <img src="assets/images/undraw-404.png" alt="" />
+          <p class="error-message">Oops.. Your location not found</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- external javascript -->
+    <script src="assets/javascript/main.js"></script>
+  </body>
+</html>

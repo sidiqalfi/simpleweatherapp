@@ -94,3 +94,13 @@
   width: 200px;
   margin: 2rem 0rem;
 }
+
+@media screen and (max-width: 425px) {
+  * {
+    font-size: 12px;
+  }
+
+  .box {
+    padding: 1rem;
+  }
+}

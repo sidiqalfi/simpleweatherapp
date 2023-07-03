@@ -8,6 +8,9 @@ Here are the links :
 - [Open Weather API](https://openweathermap.org/)
 - [Undraw Open Source illustrations](https://undraw.co/)
 
+## Demo
+<a href='https://sidiqalfiansyah.my.id/weather/' target='_blank'>Click here for Demo</a>
+
 ## Warning
 Don't forget to change the Open Weather Api in file main.js on line 2 :
 

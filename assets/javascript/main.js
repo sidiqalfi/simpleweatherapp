@@ -4,11 +4,11 @@ const apiKey = "Your API Key";
 const submit = document.getElementById("submit");
 submit.addEventListener("click", async () => {
   try {
-    // css for result
-    let result = document.querySelector(".result");
+    // css for main page
     let box = document.querySelector(".box");
-    result.style.display = "block";
+    let main = document.querySelector(".main");
     box.style.padding = "2rem";
+    main.style.display = "block";
 
     // get data from input
     let city = document.getElementById("city").value;
@@ -17,7 +17,7 @@ submit.addEventListener("click", async () => {
     // showing data to result page
     showData(data);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 });
 
@@ -38,15 +38,17 @@ async function fetchData(city) {
 // Show data to result page
 function showData(data) {
   if (data.cod == 200) {
-    let temp = document.querySelector(".temperature-number");
-    let tempDesc = document.querySelector(".temperature-description");
-    let humidity = document.querySelector(".percentage");
-    let wind = document.querySelector(".speed");
+    let temperatureData = document.querySelector(".main-temperature-data");
+    let temperatureDescription = document.querySelector(
+      ".main-temperature-description"
+    );
+    let humidity = document.querySelector(".second-layout-data-percentage");
+    let windSpeed = document.querySelector(".second-layout-data-speed");
 
-    temp.innerHTML = Math.floor(data.main.temp);
-    tempDesc.innerHTML = data.weather[0].description;
+    temperatureData.innerHTML = Math.floor(data.main.temp);
+    temperatureDescription.innerHTML = data.weather[0].description;
     humidity.innerHTML = data.main.humidity + "%";
-    wind.innerHTML = data.wind.speed + "Km/h";
+    windSpeed.innerHTML = data.wind.speed + "Km/h";
 
     // hidden error page
     let error = document.querySelector(".error");
@@ -60,8 +62,8 @@ function showData(data) {
     error.style.display = "block";
 
     // hidden the result page
-    let result = document.querySelector(".result");
-    result.style.display = "none";
+    let main = document.querySelector(".main");
+    main.style.display = "none";
   }
 }
 

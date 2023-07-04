@@ -84,6 +84,7 @@ function mainPage(data) {
   let humidity = document.querySelector(".second-layout-data-percentage");
   let windSpeed = document.querySelector(".second-layout-data-speed");
 
+  city.value = data.name + " (" + data.sys.country + ")";
   temperatureData.innerHTML = Math.floor(data.main.temp);
   temperatureDescription.innerHTML = data.weather[0].description;
   humidity.innerHTML = data.main.humidity + "%";

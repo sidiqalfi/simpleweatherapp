@@ -53,9 +53,10 @@ function changeImage(data) {
     Snow: "assets/images/snow.png",
     Clouds: "assets/images/cloud.png",
     Haze: "assets/images/cloud.png",
+    Thunderstorm: "assets/images/snow.png",
   };
 
-  let image = document.querySelector(".weather-img");
+  let image = document.querySelector(".main-weather-image");
   image.setAttribute("src", imagePaths[data] || "");
 }
 

@@ -15,6 +15,30 @@ submit.addEventListener("click", async () => {
   }
 });
 
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(reverseLocation);
+} else {
+  console.log("Geolocation is not supported by this browser.");
+}
+
+async function reverseLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+
+  let response = await fetch(
+    "https://api.openweathermap.org/geo/1.0/reverse?lat=" +
+      latitude +
+      "&lon=" +
+      longitude +
+      "&appid=" +
+      apiKey
+  );
+
+  let data = await response.json();
+  let weather = await fetchData(data[0].name);
+  showData(weather);
+}
+
 // get data from API
 async function fetchData(city) {
   let url =
